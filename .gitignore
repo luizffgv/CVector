@@ -1,3 +1,9 @@
+# Compile flags
+compile_flags.txt
+
+# Neovim
+sess
+
 # Prerequisites
 *.d
 
