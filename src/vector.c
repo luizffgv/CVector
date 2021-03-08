@@ -52,7 +52,7 @@ size_t VecLength(Vector vec)
     return vec->elems_n;
 }
 
-size_t VecSize(Vector vec)
+size_t VecSizeOfElem(Vector vec)
 {
     return vec->elem_sz;
 }
@@ -60,6 +60,12 @@ size_t VecSize(Vector vec)
 size_t VecCapacity(Vector vec)
 {
     return vec->capacity;
+}
+
+void VecShrinkToFit(Vector vec)
+{
+    vec->data = realloc(vec->data, vec->elem_sz * vec->elems_n);
+    vec->capacity = vec->elems_n;
 }
 
 

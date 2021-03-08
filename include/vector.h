@@ -50,7 +50,7 @@ size_t VecLength(Vector vec);
  *
  * @param vec Target Vector
  */
-size_t VecSize(Vector vec);
+size_t VecSizeOfElem(Vector vec);
 
 /**
  * @brief Returns how many elements the Vector's data can currently hold.
@@ -60,11 +60,18 @@ size_t VecSize(Vector vec);
 size_t VecCapacity(Vector vec);
 
 /**
+ * @brief Shrinks the capacity to fit the exact number of elements.
+ *
+ * @param vec Target Vector
+ */
+void VecShrinkToFit(Vector vec);
+
+/**
  * @brief Returns the Vector's raw data.
  *
  * @param vec Target Vector
  *
- * @return Pointer to the Vector's data
+ * @return Pointer to the Vector's data. Any Vec function may invalidate it.
  */
 void *VecData(Vector vec);
 
