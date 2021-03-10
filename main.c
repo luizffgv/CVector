@@ -18,19 +18,19 @@ int main(void)
     cur = 8;
     VecPushBack(vec, &cur);
 
-    printf("Size: %4zu, capacity: %4zu\n", VecSizeOfElem(vec), VecCapacity(vec));
+    printf("Length: %4zu, capacity: %4zu\n", VecLength(vec), VecCapacity(vec));
     VecForEach(vec, PrintInt);
     putchar('\n');
 
     puts("Removing [2]");
     VecPopAt(vec, 2);
-    printf("Size: %4zu, capacity: %4zu\n", VecSizeOfElem(vec), VecCapacity(vec));
+    printf("Length: %4zu, capacity: %4zu\n", VecLength(vec), VecCapacity(vec));
     VecForEach(vec, PrintInt);
     putchar('\n');
 
     puts("Shrinking to fit");
     VecShrinkToFit(vec);
-    printf("Size: %4zu, capacity: %4zu\n", VecSizeOfElem(vec), VecCapacity(vec));
+    printf("Length: %4zu, capacity: %4zu\n", VecLength(vec), VecCapacity(vec));
 
     puts("Changing [2] to 3 and appending {4, 5, 6}");
     *(int*)VecAt(vec, 2) = 3;
@@ -39,13 +39,13 @@ int main(void)
         cur = i;
         VecPushBack(vec, &cur);
     }
-    printf("Size: %4zu, capacity: %4zu\n", VecSizeOfElem(vec), VecCapacity(vec));
+    printf("Length: %4zu, capacity: %4zu\n", VecLength(vec), VecCapacity(vec));
     VecForEach(vec, PrintInt);
     putchar('\n');
 
     puts("Shrinking to fit");
     VecShrinkToFit(vec);
-    printf("Size: %4zu, capacity: %4zu\n", VecSizeOfElem(vec), VecCapacity(vec));
+    printf("Length: %4zu, capacity: %4zu\n", VecLength(vec), VecCapacity(vec));
 
     puts("Stealing the vector's data");
     size_t stolen_len = VecLength(vec);
